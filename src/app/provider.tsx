@@ -9,7 +9,6 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 export function Providers({children}: {children: React.ReactNode}){
     const network = WalletAdapterNetwork.Devnet;
     const endpoint = useMemo(() => clusterApiUrl(network), [network])
-    console.log(process.env.NEXT_PUBLIC_CONNECTION_ENDPOINT);
     return(
        <ConnectionProvider endpoint={process.env.NEXT_PUBLIC_CONNECTION_ENDPOINT || endpoint}>
             <WalletProvider wallets={[]} autoConnect>
